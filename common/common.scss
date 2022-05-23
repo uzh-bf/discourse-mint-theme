@@ -147,8 +147,11 @@ a {
       .category-details {
         padding: 2em;
       }
+      .category-logo {
+        min-height: 30px;
+      }
       img {
-        --height: 125px; 
+        height: 125px; 
       }
     }
     &:hover {
