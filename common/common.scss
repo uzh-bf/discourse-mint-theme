@@ -348,8 +348,13 @@ a:hover {
   }
 }
 
+.custom-search-banner-wrap {
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.8);
+}
+
 .custom-search-banner-wrap h1, .custom-search-banner-wrap p {
-  color: $color-white;
+  color: #dc6027;
 }
 
 .btn[href] {
@@ -368,4 +373,8 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
   .search-advanced-filters {
     border: 1px dashed var(--tertiary);
   }
+}
+
+.search-menu .search-input {
+  border: none;
 }
