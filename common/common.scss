@@ -145,13 +145,14 @@ a {
       border: none;
       padding: 0;
       .category-details {
-        padding: 2em;
+        padding: 0 2em 2em 2em;
       }
       .category-logo {
         min-height: 30px;
-      }
-      img {
-        height: 125px; 
+        .logo.aspect-image img {
+          --height: 125px;
+          height: 125px;
+        }
       }
     }
     &:hover {
