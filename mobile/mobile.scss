@@ -1,5 +1,10 @@
 .navigation-categories {
-  .custom-search-banner {
-    display: none;
+  .search-banner {
+    height: auto;
+    padding: 1em;
+    margin: unset;
+  }
+  .custom-search-banner-wrap {
+    padding: 1em; 
   }
 }
