@@ -1,4 +1,5 @@
-@import 'variables';
+@import "variables";
+@import "sidebar";
 
 :root {
   --tertiary: #dc6027;
@@ -18,8 +19,9 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"],
-.d-editor-textarea-wrapper, .select-kit-header {
-  @include border-radius;
+.d-editor-textarea-wrapper,
+.select-kit-header {
+  border-radius: var(--mint-border-radius);
 }
 
 input[type="text"]:focus,
@@ -41,7 +43,7 @@ input[type="color"]:focus,
 .select-kit.single-select.is-expanded .select-kit-header:not(.btn),
 .select-kit.single-select .select-kit-header:not(.btn):focus,
 .select-kit.single-select .select-kit-header:not(.btn):active {
-  @include border-radius;
+  border-radius: var(--mint-border-radius);
   box-shadow: none;
   outline: none;
 }
@@ -60,14 +62,17 @@ input[type="color"]:focus,
   margin: 2em 0 2em 0;
   .col {
     position: relative;
-    @include border-radius;
-    background: $color-white;
+    border-radius: var(--mint-border-radius);
+    @include mint-card-bg;
     padding: 2em 2em 1em;
-    border-top: 8px solid #dc6027;
-    box-shadow: 0 8px 60px 0 rgba(103,151,255,.10), 0 12px 90px 0 rgba(133,255,103,.10);
+    border-top: 8px solid $tertiary;
+    box-shadow: 0 8px 60px 0 rgba(103, 151, 255, 0.1),
+      0 12px 90px 0 rgba(133, 255, 103, 0.1);
     .header-wrapper {
-      color: var(--primary);
       background-color: transparent;
+      a h2 {
+        color: var(--primary);
+      }
       .btn-primary {
         display: none;
       }
@@ -76,22 +81,20 @@ input[type="color"]:focus,
       color: var(--secondary);
       background: var(--tertiary);
       transition: all 0.3s linear;
-      @include border-radius;
+      border-radius: var(--mint-border-radius);
       text-transform: uppercase;
       border: 1px solid var(--tertiary);
       &:hover {
-        background: var(--tertiary);
         color: var(--secondary);
-        box-shadow: 4px 4px $color-box-shadow;
-        transition: 0.3s;
-        @include border-radius;
+        background: var(--tertiary-hover);
       }
     }
   }
 }
 
 .navigation-categories .search-banner {
-  @include border-radius;
+  border-radius: var(--mint-border-radius);
+  height: 350px;
   box-sizing: border-box;
   padding: 1em;
   margin: 1em auto;
@@ -99,32 +102,37 @@ input[type="color"]:focus,
 }
 
 .category-box-inner {
-  background: $color-white;
+  @include mint-card-bg;
 }
 
 .navigation-topics {
   .container.list-container {
-    @include border-radius;
-    box-shadow: 0 8px 60px 0 rgba(103,151,255,.10), 0 12px 90px 0 rgba(133,255,103,.10);
+    border-radius: var(--mint-border-radius);
+    box-shadow: 0 8px 60px 0 rgba(103, 151, 255, 0.1),
+      0 12px 90px 0 rgba(133, 255, 103, 0.1);
     padding: 2em;
-    background-color: $color-white;
+    @include mint-card-bg;
     border-top: 8px solid $tertiary;
-    margin-top: .8em;
+    margin-top: 0.8em;
   }
 }
 
 .search-widget .search-context {
   padding: 10px;
   background-color: var(--tertiary-medium);
-  @include border-radius;
+  border-radius: var(--mint-border-radius);
 }
 
 .search-menu .search-context .show-help {
-  color: $color-white;
+  color: var(--primary-very-low);
+}
+
+.search-menu .search-input {
+  border: 0;
 }
 
 .menu-panel .d-label {
-  color: $color-black;
+  color: var(--primary);
 }
 
 a {
@@ -135,7 +143,7 @@ a {
   display: grid;
   grid-gap: 2em;
   grid-template-columns: 32% 32% 32%;
-  @include border-radius;
+  border-radius: var(--mint-border-radius);
   .category-box {
     width: 100%;
     margin: 0;
@@ -143,8 +151,8 @@ a {
     border: none;
     border-top: 8px solid;
     background: var(--secondary);
-    @include border-radius;
-    box-shadow: 0px 2px 3px 0px rgba(2,47,57,.14);
+    border-radius: var(--mint-border-radius);
+    box-shadow: 0px 2px 3px 0px rgba(2, 47, 57, 0.14);
     .category-box-inner {
       border: none;
       padding: 0;
@@ -160,7 +168,7 @@ a {
       }
     }
     &:hover {
-      box-shadow: 0px 40px 30px 0px rgba(2,47,57,.10);
+      box-shadow: 0px 40px 30px 0px rgba(2, 47, 57, 0.1);
       transform: translateY(-2px);
     }
   }
@@ -173,18 +181,18 @@ a {
 }
 
 .category-list-item.category {
-  @include border-radius;
+  border-radius: var(--mint-border-radius);
   border-right: 1px solid var(--primary-low) !important;
-  box-shadow: 0 0 4px 0 rgba(0,0,0,.10);
-  margin: 0 0.59em 2em .59em;
-  background: white;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  margin: 0 0.59em 2em 0.59em;
+  background: var(--primary-very-low);
 }
 
 #create-topic {
   color: var(--secondary);
   background: var(--tertiary);
   transition: all 0.3s linear;
-  @include border-radius;
+  border-radius: var(--mint-border-radius);
   text-transform: uppercase;
   border: 2px solid var(--tertiary);
   .fa {
@@ -193,9 +201,9 @@ a {
   &:hover {
     background: var(--tertiary);
     color: var(--secondary);
-    box-shadow: 4px 4px $color-box-shadow;
+    box-shadow: var(--mint-hover-shadow);
     transition: all 0.3s linear;
-    @include border-radius;
+    border-radius: var(--mint-border-radius);
     .fa {
       color: var(--secondary);
     }
@@ -220,8 +228,8 @@ a {
 
 .list-controls .combo-box .combo-box-header {
   border: none;
-  @include border-radius;
-  background-color: $color-white;
+  border-radius: var(--mint-border-radius);
+  @include mint-card-bg;
 }
 
 .menu-panel .panel-body-bottom .btn {
@@ -236,26 +244,26 @@ a {
 
 .nav-pills li a {
   border: 1px solid transparent;
-  @include border-radius;
+  border-radius: var(--mint-border-radius);
   &:hover {
-    @include border-radius;
+    border-radius: var(--mint-border-radius);
     transition: all 0.3s linear;
     background-color: transparent;
     color: var(--tertiary);
     border: 1px dashed var(--tertiary);
   }
   &.active {
-    @include border-radius;
+    border-radius: var(--mint-border-radius);
     transition: all 0.3s linear;
-    background: $color-mint;
+    background: var(--mint-color-mint);
     color: var(--secondary);
-    border: 1px solid $color-mint;
+    border: 1px solid var(--mint-color-mint);
   }
 }
 
 .select-kit.dropdown-select-box .dropdown-select-box-header {
   background: var(--tertiary);
-  @include border-radius;
+  border-radius: var(--mint-border-radius);
   border: 1px solid var(--tertiary);
   color: var(--secondary);
   svg {
@@ -266,7 +274,9 @@ a {
   }
 }
 
-.d-editor-button-bar .select-kit.dropdown-select-box .dropdown-select-box-header {
+.d-editor-button-bar
+  .select-kit.dropdown-select-box
+  .dropdown-select-box-header {
   background: transparent;
   color: var(--primary-medium);
   border: 1px solid transparent;
@@ -282,11 +292,13 @@ a {
   }
 }
 
-.discourse-no-touch .btn:hover .d-icon, .discourse-no-touch .btn.btn-hover .d-icon {
+.discourse-no-touch .btn:hover .d-icon,
+.discourse-no-touch .btn.btn-hover .d-icon {
   color: var(--tertiary-hover);
 }
 
-.discourse-no-touch .btn:hover, .discourse-no-touch .btn.btn-hover {
+.discourse-no-touch .btn:hover,
+.discourse-no-touch .btn.btn-hover {
   color: var(--secondary);
   background: var(--tertiary-hover);
   border-radius: 5px;
@@ -295,8 +307,10 @@ a {
   }
 }
 
-.menu-panel .widget-link:hover, .menu-panel .widget-link:focus,
-.menu-panel .categories-link:hover, .menu-panel .categories-link:focus {
+.menu-panel .widget-link:hover,
+.menu-panel .widget-link:focus,
+.menu-panel .categories-link:hover,
+.menu-panel .categories-link:focus {
   background-color: var(--tertiary-low);
 }
 
@@ -304,7 +318,7 @@ a {
   color: var(--secondary);
   background: var(--tertiary);
   transition: all 0.3s linear;
-  @include border-radius;
+  border-radius: var(--mint-border-radius);
   text-transform: uppercase;
   border: 1px solid var(--tertiary);
   .fa {
@@ -313,7 +327,7 @@ a {
 }
 
 .btn-primary {
-  @include border-radius;
+  border-radius: var(--mint-border-radius);
 }
 
 .discourse-no-touch .btn-danger:hover {
@@ -321,16 +335,17 @@ a {
 }
 
 .create {
-  @include border-radius;
+  border-radius: var(--mint-border-radius);
 }
 
 .select-kit .select-kit-row.is-selected {
   background-color: var(--secondary-very-high);
 }
 
-.modal-inner-container, .edit-category-footer {
+.modal-inner-container,
+.edit-category-footer {
   .btn-primary {
-    @include border-radius;
+    border-radius: var(--mint-border-radius);
   }
 }
 
@@ -349,23 +364,21 @@ a:hover {
   }
 }
 
-.admin-controls, .email-template, .admin-container {
-  .nav-pills>li a.active {
+.admin-controls,
+.email-template,
+.admin-container {
+  .nav-pills > li a.active {
     background: var(--tertiary);
     color: var(--secondary);
   }
   .btn-primary {
-    @include border-radius;
+    border-radius: var(--mint-border-radius);
   }
 }
 
-.custom-search-banner-wrap {
-  border-radius: 10px;
-  background-color: rgba(255,255,255,0.8);
-}
-
-.custom-search-banner-wrap h1, .custom-search-banner-wrap p {
-  color: #dc6027;
+.custom-search-banner-wrap h1,
+.custom-search-banner-wrap p {
+  color: var(--primary-very-low);
 }
 
 .btn[href] {
@@ -388,4 +401,20 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
 
 .search-menu .search-input {
   border: none;
+}
+
+// Control order of plugin connectors
+.search-banner {
+  display: none;
+}
+
+.showcased-topic-list {
+  display: none;
+}
+
+.mint-component-extensions {
+  .search-banner,
+  .showcased-topic-list {
+    display: block;
+  }
 }
