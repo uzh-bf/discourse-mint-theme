@@ -94,7 +94,6 @@ input[type="color"]:focus,
 
 .navigation-categories .search-banner {
   border-radius: var(--mint-border-radius);
-  height: 350px;
   box-sizing: border-box;
   padding: 1em;
   margin: 1em auto;
@@ -378,7 +377,7 @@ a:hover {
 
 .custom-search-banner-wrap h1,
 .custom-search-banner-wrap p {
-  color: var(--primary-very-low);
+  color: var(--tertiary);
 }
 
 .btn[href] {
